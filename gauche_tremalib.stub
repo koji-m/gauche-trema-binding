@@ -1,0 +1,50 @@
+;;;
+;;; gauche_tremalib.stub
+;;;
+
+"
+#include \"gauche_trema.h\"
+"
+
+;; The following entry is a dummy one.
+;; Replace it for your definitions.
+
+(define-cproc test-gauche_trema () ::<const-cstring>
+  (result "gauche_trema is working"))
+
+
+;; Definition of Trema API
+
+(define-cproc init-trema (args)
+  (result (Scm_InitTrema args)))
+
+(define-cproc start-trema ()
+  (result (Scm_StartTrema)))
+
+(define-cproc set-switch-ready-handler ()
+  (result (Scm_set_switch_ready_handler)))
+
+(define-cproc set-switch-disconnected-handler ()
+  (result (Scm_set_switch_disconnected_handler)))
+
+(define-cproc set-packet-in-handler ()
+  (result (Scm_set_packet_in_handler)))
+
+(define-cproc make-action-output (outport::<uint16>)
+  (result (Scm_MakeActionOutput outport)))
+
+(define-cproc send-packet-out (datapath-id message actions)
+  (result (Scm_SendPacketOut datapath-id message actions)))
+
+(define-cproc match-from (message wildcard)
+  (result (Scm_MatchFrom message wildcard)))
+
+(define-cproc send-flow-mod (command datapath_id ofp_match actions timeout priority buffer_id)
+  (result (Scm_SendFlowMod command datapath_id ofp_match actions timeout priority buffer_id)))
+
+(define-cproc debug-print (message)
+  (result (Scm_DebugPrint message)))
+
+;; Local variables:
+;; mode: scheme
+;; end:

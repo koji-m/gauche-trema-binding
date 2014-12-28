@@ -1,0 +1,20 @@
+#!/bin/sh
+
+if [ "$1" = "cflags" ]; then
+ ./trm-conf --cflags
+ exit 0
+fi
+
+if [ "$1" = "ldflags" ]; then
+ ./trm-conf --libs | sed -e "s/-l.*//"
+ exit 0
+fi
+
+if [ "$1" = "libs" ]; then
+ ./trm-conf --libs | sed -e "s/-L[^ ]* //"
+ exit 0
+fi
+
+echo "invalid option!"
+exit 1
+

@@ -1,0 +1,2 @@
+#!/bin/sh
+./gosh-trm-libs.scm `./trema-opt libs`

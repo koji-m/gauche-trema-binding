@@ -1,0 +1,8 @@
+;; -*-Scheme-*-
+;; Gauche Package Description
+
+(define-gauche-package "gauche-trema"
+  :version "1.0"
+  :gauche-version "0.9.1"
+  :configure "./configure "
+)

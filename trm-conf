@@ -1,0 +1,7 @@
+#!/usr/bin/ruby1.8
+
+require 'rubygems'
+
+version = ">= 0"
+gem 'trema', version
+exec Gem.bin_path('trema', 'trema-config', version) , *ARGV
